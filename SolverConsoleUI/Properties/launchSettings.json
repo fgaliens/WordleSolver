@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SolverConsoleUI": {
+      "commandName": "Project",
+      "commandLineArgs": "\"vocab.txt\""
+    }
+  }
+}

@@ -1,0 +1,123 @@
+﻿<Window x:Class="WordleSolverWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordleSolverWPF"
+        mc:Ignorable="d"
+        Title="WordleSolver" Height="450" Width="800" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="textBoxBrush">
+            <GradientStop Color="#00000000" Offset="0.2"/>
+            <GradientStop Color="#1f000000" Offset="0.7"/>
+        </LinearGradientBrush>
+        <SolidColorBrush Color="#6f00ff00" x:Key="greenBrush" />
+        <SolidColorBrush Color="#6fffff00" x:Key="yellowBrush" />
+    </Window.Resources>
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="ButtonClose" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,1" Background="Gray" Click="ButtonClose_Click">
+                X
+            </Button>
+
+            <Label HorizontalAlignment="Stretch" FontWeight="Normal" FontSize="14" BorderBrush="Black" BorderThickness="0,0,0,1" Background="Gray">
+                Wordle solver
+            </Label>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="TextBoxLetter1" Grid.Column="1" Width="40" 
+                             Background="{StaticResource textBoxBrush}"
+                             FontSize="28" 
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center"
+                             KeyDown="TextBoxLetter_KeyDown"
+                             KeyUp="TextBoxLetter_KeyUp"
+                             TextChanged="TextBoxLetter_TextChanged"
+                             CaretBrush="#00000000" 
+                             SelectionBrush="Gainsboro" OpacityMask="White"/>
+                    <TextBox x:Name="TextBoxLetter2" Grid.Column="2" Width="40" 
+                             Background="{StaticResource textBoxBrush}"
+                             FontSize="28"
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             KeyDown="TextBoxLetter_KeyDown"
+                             KeyUp="TextBoxLetter_KeyUp"
+                             TextChanged="TextBoxLetter_TextChanged"/>
+                    <TextBox x:Name="TextBoxLetter3" Grid.Column="3" Width="40" 
+                             Background="{StaticResource textBoxBrush}"
+                             FontSize="28"
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center"
+                             KeyDown="TextBoxLetter_KeyDown"
+                             KeyUp="TextBoxLetter_KeyUp"
+                             TextChanged="TextBoxLetter_TextChanged"/>
+                    <TextBox x:Name="TextBoxLetter4" Grid.Column="4" Width="40" 
+                             Background="{StaticResource textBoxBrush}"
+                             FontSize="28"
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             KeyDown="TextBoxLetter_KeyDown"
+                             KeyUp="TextBoxLetter_KeyUp"
+                             TextChanged="TextBoxLetter_TextChanged"/>
+                    <TextBox x:Name="TextBoxLetter5" Grid.Column="5" Width="40" Background="{StaticResource textBoxBrush}"
+                             FontSize="28"
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             KeyDown="TextBoxLetter_KeyDown"
+                             KeyUp="TextBoxLetter_KeyUp"
+                             TextChanged="TextBoxLetter_TextChanged"/>
+                    <Ellipse HorizontalAlignment="Left" Grid.Column="1" Height="10" Width="10" Fill="{StaticResource yellowBrush}" VerticalAlignment="Top" />
+                    <Ellipse HorizontalAlignment="Left" Grid.Column="2" Height="10" Width="10" Fill="{StaticResource yellowBrush}" VerticalAlignment="Top" />
+                    <Ellipse HorizontalAlignment="Left" Grid.Column="3" Height="10" Width="10" Fill="{StaticResource yellowBrush}" VerticalAlignment="Top" />
+                    <Ellipse HorizontalAlignment="Left" Grid.Column="4" Height="10" Width="10" Fill="{StaticResource yellowBrush}" VerticalAlignment="Top" />
+                    <Ellipse HorizontalAlignment="Left" Grid.Column="5" Height="10" Width="10" Fill="{StaticResource yellowBrush}" VerticalAlignment="Top" />
+                </Grid>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
